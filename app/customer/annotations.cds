@@ -119,3 +119,13 @@ annotate service.Passenger with @(
             },],
     }
 );
+annotate service.Passenger with @(
+    UI.HeaderInfo : {
+        TypeNamePlural : '{i18n>Customers}',
+        TypeName : 'Customer',
+        Title : {
+            $Type : 'UI.DataField',
+            Value : FullName,
+        },
+    }
+);
