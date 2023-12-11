@@ -107,3 +107,27 @@ annotate service.Passenger with @(
     UI.SelectionFields : [
         City,CountryCode_code,PostalCode,]
 );
+annotate service.Passenger with @(
+    UI.HeaderFacets : [
+        {
+            $Type : 'UI.ReferenceFacet',
+            Label : 'Contact Details',
+            ID : 'ContactDetails',
+            Target : '@UI.FieldGroup#ContactDetails',
+        },
+    ],
+    UI.FieldGroup #ContactDetails : {
+        $Type : 'UI.FieldGroupType',
+        Data : [
+            {
+                $Type : 'UI.DataField',
+                Value : FullName,
+            },{
+                $Type : 'UI.DataField',
+                Value : EMailAddress,
+            },{
+                $Type : 'UI.DataField',
+                Value : PhoneNumber,
+            },],
+    }
+);
