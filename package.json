@@ -28,15 +28,15 @@
         "passport": "^0.6.0"
     },
     "devDependencies": {
-        "@sap/ux-specification": "^1.120.0",
+        "@sap/ux-specification": "UI5-1.108",
         "axios": "^0",
         "chai": "^4.3.0",
         "chai-as-promised": "^7.1.1",
         "chai-subset": "^1.6.0",
         "jest": "^28.1.0",
         "qunit": "^2.9.3",
-        "sqlite3": "^5",
-        "rimraf": "^3.0.2"
+        "rimraf": "^3.0.2",
+        "sqlite3": "^5"
     },
     "cds": {
         "requires": {
