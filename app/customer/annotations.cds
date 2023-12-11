@@ -38,18 +38,6 @@ annotate service.Passenger with @(
             },
             {
                 $Type : 'UI.DataField',
-                Value : createdBy,
-            },
-            {
-                $Type : 'UI.DataField',
-                Value : LastChangedAt,
-            },
-            {
-                $Type : 'UI.DataField',
-                Value : LastChangedBy,
-            },
-            {
-                $Type : 'UI.DataField',
                 Value : CustomerID,
             },
             {
