@@ -22,6 +22,10 @@ annotate service.Passenger with @(
             $Type : 'UI.DataField',
             Value : LastChangedBy,
         },
+        {
+            $Type : 'UI.DataField',
+            Value : City,
+        },
     ]
 );
 annotate service.Passenger with @(
