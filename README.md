@@ -3,7 +3,7 @@
 
 # Solutions for the course UX405 “Developing an SAP Fiori Elements App Based on a CAP OData V4 Service: Advanced E-learning”
 
-## Description
+## Description*
 <!-- Please include SEO-friendly description -->
 The app is based on [CAP-SFLIGHT](https://github.com/SAP-samples/cap-sflight) Model with some small adjustments. 
 Each branch contains a solution for one of the exercises and is based on the previous exercise. The branch to start with is [initial-app-state](https://github.com/SAP-samples/fiori-elements-v4-cap-advanced/tree/initial-app-state). 
