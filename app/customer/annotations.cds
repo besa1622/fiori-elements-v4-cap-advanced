@@ -100,5 +100,6 @@ annotate service.Passenger with @(
     ]
 );
 annotate service.Passenger with @(
-    UI.SelectionFields : []
+    UI.SelectionFields : [
+        City,CountryCode_code,PostalCode,]
 );
