@@ -6,8 +6,12 @@ using from '../../db/master-data';
 // annotatios that control the fiori layout
 //
 
-annotate TravelService.Travel with @UI: {
+annotate TravelService.Travel @(Common.SideEffects #ReactonItemCreationOrDeletion: {
+    SourceEntities  : [to_Booking],
+    TargetProperties: ['TotalPrice']
+});
 
+annotate TravelService.Travel with @UI: {
     Identification        : [
         {
             $Type : 'UI.DataFieldForAction',
