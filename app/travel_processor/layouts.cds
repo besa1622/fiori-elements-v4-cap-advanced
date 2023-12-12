@@ -211,7 +211,15 @@ annotate TravelService.Travel with @UI: {
         {Value: TravelID},
         {Value: to_Agency_AgencyID},
         {Value: to_Customer_CustomerID},
-        {Value: Description}
+        {Value: Description},
+        {
+            $Type : 'UI.DataField',
+            Value : BeginDate,
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : EndDate,
+        }
     ]},
     FieldGroup #DateData  : {Data: [
         {
@@ -583,3 +591,8 @@ annotate TravelService.Travel with @(
         Visualization : #Progress,
     }
 );
+
+annotate TravelService.Travel with {
+    Description @UI.MultiLineText : true
+                @UI.Placeholder  : '{i18n>DescrPlcehlder}'
+};
