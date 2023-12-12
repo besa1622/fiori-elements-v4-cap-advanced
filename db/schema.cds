@@ -115,3 +115,7 @@ entity SupplementScope {
   DeviationRangeLowValue : Integer @Common.Label: 'Deviation Range Threshold';
   ToleranceRangeLowValue : Integer @Common.Label: 'Tolerance Range Threshold'; 
 }
+
+type BookingData: {
+  HasNewBookings: Boolean
+}

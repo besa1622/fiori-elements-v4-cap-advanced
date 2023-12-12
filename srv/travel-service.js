@@ -217,6 +217,23 @@ init() {
     req.data.Progress = score
   })
 
+  /**
+    * Function import handler: getBookingDataOfPassenger
+    * @param CustomerID
+    * @returns BookingData
+    */
+  this.on('getBookingDataOfPassenger', async (req) => {
+    const { CustomerID } = req.data
+    const allCustomerBookings = await SELECT`BookingStatus_code as status`.from(Booking).where`to_Customer_CustomerID = ${CustomerID}`
+    const bookingData = {
+      HasNewBookings: false
+    }
+    bookingData.HasNewBookings = allCustomerBookings.some((booking) => {
+      return booking.status === 'N';
+    })
+    return bookingData
+  });
+
   // Add base class's handlers. Handlers registered above go first.
   return super.init()
 
