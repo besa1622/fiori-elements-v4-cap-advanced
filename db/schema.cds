@@ -78,6 +78,13 @@ entity TravelStatus : CodeList {
 }
 
 annotate Travel with @(
+   Capabilities.DeleteRestrictions : {
+       $Type : 'Capabilities.DeleteRestrictionsType',
+      Deletable: TravelStatus.insertDeleteRestriction
+   }   
+);
+
+annotate Travel with @(
 Capabilities: {
 	FilterRestrictions : {FilterExpressionRestrictions : [{
 		Property	: 'BeginDate',
