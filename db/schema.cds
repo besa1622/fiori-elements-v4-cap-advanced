@@ -49,6 +49,7 @@ entity BookingSupplement : managed {
   BookingSupplementID : Integer @Core.Computed;
   Price               : Decimal(16, 3);
   CurrencyCode        : Currency;
+  DeliveryPreference  : Association to MealOptionDeliveryPreference;
   to_Booking          : Association to Booking;
   to_Travel           : Association to Travel;
   to_Supplement       : Association to Supplement;
@@ -58,6 +59,13 @@ entity BookingSupplement : managed {
 //
 //  Code Lists
 //
+entity MealOptionDeliveryPreference: CodeList {
+  key code : String enum {
+    SoonAfterTakeoff = 'S';
+    Midflight = 'M';
+    Late = 'L';
+  } default 'M'
+};
 
 entity BookingStatus : CodeList {
   key code : String enum {
