@@ -1,5 +1,6 @@
 using TravelService from '../../srv/travel-service';
 using from '../../db/schema';
+using from '../../db/master-data';
 
 //
 // annotatios that control the fiori layout
@@ -85,6 +86,11 @@ annotate TravelService.Travel with @UI: {
             $Type : 'UI.DataFieldForAnnotation',
             Target: '@UI.DataPoint#Progress',
             Label : '{i18n>Progress}',
+        },
+        {
+            $Type : 'UI.DataFieldForAnnotation',
+            Target : 'to_Agency/@Communication.Contact#contact',
+            Label : '{i18n>AgencyID}',
         }
     ],
     Facets                : [
@@ -269,5 +275,34 @@ annotate TravelService.Booking with @(
             Role     : #Axis1,
             Measure  : TotalSupplPrice,
         }, ],
+    }
+);
+annotate TravelService.Travel with @(
+    Communication.Contact #contact : {
+        $Type : 'Communication.ContactType',
+        fn : AgencyName,
+    }
+);
+annotate TravelService.TravelAgency with @(
+    Communication.Contact #contact : {
+        $Type : 'Communication.ContactType',
+        fn : Name,
+        tel : [
+            {
+                $Type : 'Communication.PhoneNumberType',
+                type : #work,
+                uri : PhoneNumber,
+            },
+        ],
+        adr : [
+            {
+                $Type : 'Communication.AddressType',
+                type : #work,
+                street : Street,
+                locality : City,
+                code : PostalCode,
+                country : CountryCode_code,
+            },
+        ],
     }
 );
