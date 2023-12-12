@@ -99,7 +99,10 @@ annotate my.Booking {
       {$Type: 'Common.ValueListParameterDisplayOnly', ValueListProperty: 'to_Airline/Name'},
       {$Type: 'Common.ValueListParameterDisplayOnly', ValueListProperty: 'PlaneType'},
       {$Type: 'Common.ValueListParameterDisplayOnly', ValueListProperty: 'MaximumSeats'},
-      {$Type: 'Common.ValueListParameterDisplayOnly', ValueListProperty: 'OccupiedSeats'}
+      {$Type: 'Common.ValueListParameterDisplayOnly', ValueListProperty: 'OccupiedSeats'},
+      {$Type: 'Common.ValueListParameterInOut', LocalDataProperty: FlightDate,  ValueListProperty: 'FlightDate'},
+      {$Type: 'Common.ValueListParameterInOut', LocalDataProperty: FlightPrice,  ValueListProperty: 'Price'},
+      {$Type: 'Common.ValueListParameterInOut', LocalDataProperty: CurrencyCode_code, ValueListProperty: 'CurrencyCode_code'},
     ],
     PresentationVariantQualifier: 'SortOrderPV'  // use presentation variant to sort by FlightDate desc
   };
