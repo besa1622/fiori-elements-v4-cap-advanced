@@ -1,195 +1,209 @@
 {
-  "_version": "1.59.0",
-  "sap.app": {
-    "id": "sap.fe.cap.customer",
-    "type": "application",
-    "i18n": "i18n/i18n.properties",
-    "applicationVersion": {
-      "version": "${project.version}"
-    },
-    "title": "{{appTitle}}",
-    "description": "{{appDescription}}",
-    "resources": "resources.json",
-    "sourceTemplate": {
-      "id": "@sap/generator-fiori:lrop",
-      "version": "1.11.5",
-      "toolsId": "6afeff1c-2dd4-4eff-939a-fc28eb7a6c3c"
-    },
-    "dataSources": {
-      "mainService": {
-        "uri": "/processor/",
-        "type": "OData",
-        "settings": {
-          "annotations": [],
-          "localUri": "localService/metadata.xml",
-          "odataVersion": "4.0"
-        }
-      }
-    },
-    "ach": "ZMI",
-    "crossNavigation": {
-      "inbounds": {
-        "Customer-display": {
-          "semanticObject": "Customer",
-          "action": "display",
-          "title": "{{flpTitle}}",
-          "signature": {
-            "parameters": {},
-            "additionalParameters": "allowed"
-          }
-        }
-      }
-    }
-  },
-  "sap.ui": {
-    "technology": "UI5",
-    "icons": {
-      "icon": "",
-      "favIcon": "",
-      "phone": "",
-      "phone@2": "",
-      "tablet": "",
-      "tablet@2": ""
-    },
-    "deviceTypes": {
-      "desktop": true,
-      "tablet": true,
-      "phone": true
-    }
-  },
-  "sap.ui5": {
-    "dependencies": {
-      "minUI5Version": "${sap.ui5.dist.version}",
-      "libs": {
-        "sap.m": {
-          "lazy": false
+    "_version": "1.59.0",
+    "sap.app": {
+        "id": "sap.fe.cap.customer",
+        "type": "application",
+        "i18n": "i18n/i18n.properties",
+        "applicationVersion": {
+            "version": "${project.version}"
         },
-        "sap.ui.core": {
-          "lazy": false
+        "title": "{{appTitle}}",
+        "description": "{{appDescription}}",
+        "resources": "resources.json",
+        "sourceTemplate": {
+            "id": "@sap/generator-fiori:lrop",
+            "version": "1.11.5",
+            "toolsId": "6afeff1c-2dd4-4eff-939a-fc28eb7a6c3c"
         },
-        "sap.ushell": {
-          "lazy": false
-        },
-        "sap.fe.templates": {
-          "lazy": false
-        }
-      }
-    },
-    "contentDensities": {
-      "compact": true,
-      "cozy": true
-    },
-    "models": {
-      "i18n": {
-        "type": "sap.ui.model.resource.ResourceModel",
-        "settings": {
-          "bundleName": "sap.fe.cap.customer.i18n.i18n"
-        }
-      },
-      "": {
-        "dataSource": "mainService",
-        "preload": true,
-        "settings": {
-          "synchronizationMode": "None",
-          "operationMode": "Server",
-          "autoExpandSelect": true,
-          "earlyRequests": true
-        }
-      },
-      "@i18n": {
-        "type": "sap.ui.model.resource.ResourceModel",
-        "uri": "i18n/i18n.properties"
-      }
-    },
-    "resources": {
-      "css": []
-    },
-    "routing": {
-      "config": {},
-      "routes": [
-        {
-          "pattern": ":?query:",
-          "name": "PassengerList",
-          "target": "PassengerList"
-        },
-        {
-          "pattern": "Passenger({key}):?query:",
-          "name": "PassengerObjectPage",
-          "target": "PassengerObjectPage"
-        },
-        {
-          "pattern": "Passenger({key})/to_Booking({key2}):?query:",
-          "name": "BookingObjectPage",
-          "target": "BookingObjectPage"
-        }
-      ],
-      "targets": {
-        "PassengerList": {
-          "type": "Component",
-          "id": "PassengerList",
-          "name": "sap.fe.templates.ListReport",
-          "options": {
-            "settings": {
-              "contextPath": "/Passenger",
-              "variantManagement": "Page",
-              "navigation": {
-                "Passenger": {
-                  "detail": {
-                    "route": "PassengerObjectPage"
-                  }
+        "dataSources": {
+            "mainService": {
+                "uri": "/processor/",
+                "type": "OData",
+                "settings": {
+                    "annotations": [],
+                    "localUri": "localService/metadata.xml",
+                    "odataVersion": "4.0"
                 }
-              },
-              "controlConfiguration": {
-                "@com.sap.vocabularies.UI.v1.LineItem": {
-                  "tableSettings": {
-                    "type": "ResponsiveTable",
-                    "selectionMode": "Auto"
-                  }
-                }
-              }
             }
-          }
         },
-        "PassengerObjectPage": {
-          "type": "Component",
-          "id": "PassengerObjectPage",
-          "name": "sap.fe.templates.ObjectPage",
-          "options": {
-            "settings": {
-              "editableHeaderContent": false,
-              "contextPath": "/Passenger",
-              "navigation": {
-                "to_Booking": {
-                  "detail": {
-                    "route": "BookingObjectPage"
-                  }
+        "ach": "ZMI",
+        "crossNavigation": {
+            "inbounds": {
+                "Customer-display": {
+                    "semanticObject": "Customer",
+                    "action": "display",
+                    "title": "{{flpTitle}}",
+                    "signature": {
+                        "parameters": {},
+                        "additionalParameters": "allowed"
+                    }
                 }
-              }
             }
-          }
-        },
-        "BookingObjectPage": {
-          "type": "Component",
-          "id": "BookingObjectPage",
-          "name": "sap.fe.templates.ObjectPage",
-          "options": {
-            "settings": {
-              "editableHeaderContent": false,
-              "contextPath": "/Passenger/to_Booking"
-            }
-          }
         }
-      }
+    },
+    "sap.ui": {
+        "technology": "UI5",
+        "icons": {
+            "icon": "",
+            "favIcon": "",
+            "phone": "",
+            "phone@2": "",
+            "tablet": "",
+            "tablet@2": ""
+        },
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        }
+    },
+    "sap.ui5": {
+        "dependencies": {
+            "minUI5Version": "${sap.ui5.dist.version}",
+            "libs": {
+                "sap.m": {
+                    "lazy": false
+                },
+                "sap.ui.core": {
+                    "lazy": false
+                },
+                "sap.ushell": {
+                    "lazy": false
+                },
+                "sap.fe.templates": {
+                    "lazy": false
+                }
+            }
+        },
+        "contentDensities": {
+            "compact": true,
+            "cozy": true
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleName": "sap.fe.cap.customer.i18n.i18n"
+                }
+            },
+            "": {
+                "dataSource": "mainService",
+                "preload": true,
+                "settings": {
+                    "synchronizationMode": "None",
+                    "operationMode": "Server",
+                    "autoExpandSelect": true,
+                    "earlyRequests": true
+                }
+            },
+            "@i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "uri": "i18n/i18n.properties"
+            }
+        },
+        "resources": {
+            "css": []
+        },
+        "routing": {
+            "routes": [
+                {
+                    "pattern": ":?query:",
+                    "name": "PassengerList",
+                    "target": "PassengerList"
+                },
+                {
+                    "pattern": "Passenger({key}):?query:",
+                    "name": "PassengerObjectPage",
+                    "target": "PassengerObjectPage"
+                },
+                {
+                    "pattern": "Passenger({key})/to_Booking({key2}):?query:",
+                    "name": "BookingObjectPage",
+                    "target": "BookingObjectPage"
+                }
+            ],
+            "targets": {
+                "PassengerList": {
+                    "type": "Component",
+                    "id": "PassengerList",
+                    "name": "sap.fe.templates.ListReport",
+                    "options": {
+                        "settings": {
+                            "contextPath": "/Passenger",
+                            "variantManagement": "Page",
+                            "navigation": {
+                                "Passenger": {
+                                    "detail": {
+                                        "route": "PassengerObjectPage"
+                                    }
+                                }
+                            },
+                            "controlConfiguration": {
+                                "@com.sap.vocabularies.UI.v1.LineItem": {
+                                    "tableSettings": {
+                                        "type": "ResponsiveTable",
+                                        "selectionMode": "Auto"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "PassengerObjectPage": {
+                    "type": "Component",
+                    "id": "PassengerObjectPage",
+                    "name": "sap.fe.templates.ObjectPage",
+                    "options": {
+                        "settings": {
+                            "editableHeaderContent": false,
+                            "contextPath": "/Passenger",
+                            "navigation": {
+                                "to_Booking": {
+                                    "detail": {
+                                        "route": "BookingObjectPage"
+                                    }
+                                }
+                            },
+                            "content": {
+                                "body": {
+                                    "sections": {
+                                        "OwnBookings": {
+                                            "template": "sap.fe.cap.customer.ext.fragment.OwnBookings",
+                                            "position": {
+                                                "placement": "After",
+                                                "anchor": "GeneratedFacet1"
+                                            },
+                                            "title": "OwnBookings",
+                                            "type": "XMLFragment"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "BookingObjectPage": {
+                    "type": "Component",
+                    "id": "BookingObjectPage",
+                    "name": "sap.fe.templates.ObjectPage",
+                    "options": {
+                        "settings": {
+                            "editableHeaderContent": false,
+                            "contextPath": "/Passenger/to_Booking"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "sap.fiori": {
+        "registrationIds": [
+            "TESTMI"
+        ],
+        "archeType": "transactional"
+    },
+    "sap.cloud": {
+        "public": true,
+        "service": "sap.fe.cap.sflight"
     }
-  },
-  "sap.fiori": {
-    "registrationIds": [
-      "TESTMI"
-    ],
-    "archeType": "transactional"
-  },
-  "sap.cloud": {
-    "public": true,
-    "service": "sap.fe.cap.sflight"
-  }
 }
