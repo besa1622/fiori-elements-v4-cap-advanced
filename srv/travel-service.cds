@@ -61,7 +61,7 @@ service TravelService @(path:'/processor') {
   entity SupplementScope as projection on my.SupplementScope;
 
   // Function import used in Controller Extension 'PassengerOPExtend.js' to calculate booking data
-  function getBookingDataOfPassenger(CustomerID: String) returns my.BookingData;
+  function getBookingDataOfPassenger(CustomerID : String) returns my.BookingData;
 }
 
 type Percentage : Integer @assert.range: [1,100];
