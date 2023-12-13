@@ -95,17 +95,17 @@ annotate Travel with @(
    }   
 );
 
-annotate Travel with @(
-Capabilities: {
-	FilterRestrictions : {FilterExpressionRestrictions : [{
-		Property	: 'BeginDate',
-		AllowedExpressions: 'SingleRange'
-	},
-	{
-		Property	: 'EndDate',
-		AllowedExpressions: 'SingleRange'
-	}]}
-});
+// annotate Travel with @(
+// Capabilities: {
+// 	FilterRestrictions : {FilterExpressionRestrictions : [{
+// 		Property	: 'BeginDate',
+// 		AllowedExpressions: 'SingleRange'
+// 	},
+// 	{
+// 		Property	: 'EndDate',
+// 		AllowedExpressions: 'SingleRange'
+// 	}]}
+// });
 
 @odata.singleton
 entity SupplementScope {
