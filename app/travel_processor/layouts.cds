@@ -61,7 +61,10 @@ annotate TravelService.Travel with @UI: {
             $Type     : 'Common.SortOrderType',
             Property  : TravelID,
             Descending: true
-        }]
+        }],
+        GroupBy : [
+            to_Customer_CustomerID,
+        ]
     },
     SelectionFields       : [
         to_Agency_AgencyID,
