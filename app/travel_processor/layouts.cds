@@ -288,7 +288,10 @@ annotate TravelService.Booking with @UI: {
             $Type     : 'Common.SortOrderType',
             Property  : BookingID,
             Descending: false
-        }]
+        }],
+        GroupBy : [
+            to_Customer_CustomerID,
+        ]
     },
     SelectionFields               : [],
     LineItem                      : [
