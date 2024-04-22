@@ -28,7 +28,7 @@ annotate TravelService.Travel with @UI : {
     Visualizations : ['@UI.LineItem'],
     SortOrder      : [{
       $Type      : 'Common.SortOrderType',
-      Property   : TravelID,
+      Property   : BookingFee,
       Descending : true
     }]
   },

@@ -104,87 +104,20 @@
         "routing": {
             "routes": [
                 {
+                    "name": "TravelCustomPagePage",
                     "pattern": ":?query:",
-                    "name": "TravelList",
-                    "target": "TravelList"
-                },
-                {
-                    "pattern": "Travel({key}):?query:",
-                    "name": "TravelObjectPage",
-                    "target": "TravelObjectPage"
-                },
-                {
-                    "pattern": "Travel({key})/to_Booking({key2}):?query:",
-                    "name": "BookingObjectPage",
-                    "target": "BookingObjectPage"
+                    "target": "TravelCustomPagePage"
                 }
             ],
             "targets": {
-                "TravelList": {
+                "TravelCustomPagePage": {
                     "type": "Component",
-                    "id": "TravelList",
-                    "name": "sap.fe.templates.ListReport",
+                    "id": "TravelCustomPagePage",
+                    "name": "sap.fe.core.fpm",
                     "options": {
                         "settings": {
-                            "entitySet": "Travel",
-                            "controlConfiguration": {
-                                "@com.sap.vocabularies.UI.v1.SelectionFields": {
-                                    "useSemanticDateRange": true
-                                }
-                            },
-                            "variantManagement": "Page",
-                            "initialLoad": true,
-                            "navigation": {
-                                "Travel": {
-                                    "detail": {
-                                        "route": "TravelObjectPage"
-                                    }
-                                }
-                            }
-                        }
-                    }
-                },
-                "TravelObjectPage": {
-                    "type": "Component",
-                    "id": "TravelObjectPage",
-                    "name": "sap.fe.templates.ObjectPage",
-                    "options": {
-                        "settings": {
-                            "entitySet": "Travel",
-                            "navigation": {
-                                "to_Booking": {
-                                    "detail": {
-                                        "route": "BookingObjectPage"
-                                    }
-                                }
-                            },
-                            "controlConfiguration": {
-                                "to_Booking/@com.sap.vocabularies.UI.v1.LineItem": {
-                                    "tableSettings": {
-                                        "type": "ResponsiveTable",
-                                        "personalization": {
-                                            "column": true,
-                                            "sort": false
-                                        },
-                                        "creationMode": {
-                                            "name": "Inline",
-                                            "createAtEnd": true
-                                        }
-                                    }
-                                }
-                            },
-                            "editableHeaderContent": false
-                        }
-                    }
-                },
-                "BookingObjectPage": {
-                    "type": "Component",
-                    "id": "BookingObjectPage",
-                    "name": "sap.fe.templates.ObjectPage",
-                    "options": {
-                        "settings": {
-                            "entitySet": "Booking",
-                            "editableHeaderContent": false
+                            "viewName": "sap.fe.cap.travel.ext.view.CustomPage",
+                            "contextPath": "/Travel"
                         }
                     }
                 }

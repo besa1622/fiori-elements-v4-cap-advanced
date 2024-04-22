@@ -1,0 +1,7 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:macros="sap.fe.macros" xmlns:html="http://www.w3.org/1999/xhtml" controllerName="sap.fe.cap.travel.ext.view.CustomPage">
+    <Page id="CustomPage" title="{i18n&gt;CustomPageTitle}">
+        <content>
+            <macros:Table id="Table" metaPath="@com.sap.vocabularies.UI.v1.PresentationVariant" headerVisible="true" isSearchable="true" selectionMode="Single" type="ResponsiveTable" variantManagement="None"/>
+        </content>
+    </Page>
+</mvc:View>
